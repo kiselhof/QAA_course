@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.example</groupId>
+    <artifactId>test_sample</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <properties>
+
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.3.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <version>2.7</version>
+            <type>maven-plugin</type>
+        </dependency>
+        <!--<dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>5.15.1</version>
+        </dependency>-->
+    </dependencies>
+    <!--<plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0-M5</version>
+            <configuration>
+                <properties>
+                    <property>
+                        <name>usedefaultlisteners</name>
+                        <value>false</value> &lt;!&ndash; disabling default listeners is optional &ndash;&gt;
+                    </property>
+                    <property>
+                        <name>listener</name>
+                        <value>framework.Listener</value>
+                    </property>
+                    &lt;!&ndash;<property>
+                        <name>reporter</name>
+                        <value>listenReport.Reporter</value>
+                    </property>&ndash;&gt;
+                </properties>
+            </configuration>
+        </plugin>
+    </plugins>-->
+</project>
