@@ -6,7 +6,7 @@ public class ItemToSellChallenge8 {
     private String _startTime;
     private String _endTime;
 
-    public ItemToSellChallenge8(String whatYouSell, String description, String startTime, String endTime){
+    public ItemToSellChallenge8(String whatYouSell, String description, String startTime, String endTime) {
         this._whatYouSell = whatYouSell;
         this._description = description;
         this._startTime = startTime;

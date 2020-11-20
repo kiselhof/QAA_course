@@ -7,11 +7,11 @@ public class UserTestingChallenges10 {
     private static String LASTNAME;
 
 
-    public UserTestingChallenges10(String username, String password, String firstname, String lastname){
-        this.USERNAME = username;
-        this.PASSWORD = password;
-        this.FIRSTNAME = firstname;
-        this.LASTNAME = lastname;
+    public UserTestingChallenges10(String username, String password, String firstname, String lastname) {
+        USERNAME = username;
+        PASSWORD = password;
+        FIRSTNAME = firstname;
+        LASTNAME = lastname;
     }
 
 

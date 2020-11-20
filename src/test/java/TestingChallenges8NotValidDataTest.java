@@ -9,8 +9,8 @@ public class TestingChallenges8NotValidDataTest {
     private static final String ENDTIMEnotvalid = "1250pm";
 
 
-    @Test(groups={"challenge8invalidData"})
-    public void Challenge8NotValidDataTest(){
+    @Test(groups = {"challenge8invalidData"})
+    public void Challenge8NotValidDataTest() {
         Navigator.openTestingChallenge8()
                 .createItem(ITEMNAMEnotvalid, DESCRIPTIONnotvalid, STARTTIMEnotvalid, ENDTIMEnotvalid)
                 .InputDataAndSend()

@@ -1,13 +1,9 @@
 import framework.BrowserManager;
-import framework.Listener;
+//import framework.Listener;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
 
-import static framework.BrowserManager.getDriver;
-
-
+//@Listeners(Listener.class)
 public class BaseTest {
 
     @BeforeMethod

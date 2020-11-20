@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import static org.testng.Assert.assertEquals;
 
-public class Challenge4Page extends BasePage{
+public class Challenge4Page extends BasePage {
 
     @FindBy(xpath = "//input[@type='text']")
     WebElement inputCNPnumber;
@@ -17,19 +17,17 @@ public class Challenge4Page extends BasePage{
     @FindBy(xpath = "//span[@class='values-tested']")
     WebElement numberTested;
 
-    public Challenge4Page inputNumberAndSubmit(ArrayList<CNPNumber> list, int index){
+    public Challenge4Page inputNumberAndSubmit(ArrayList<CNPNumber> list, int index) {
         inputCNPnumber.sendKeys(list.get(index).getCNP());
         submitButton.click();
         return this;
     }
 
-    public Challenge4Page verifyChecksFound(int expectedValue){
+    public Challenge4Page verifyChecksFound(int expectedValue) {
         int testedValue = Integer.parseInt(numberTested.getText());
-        assertEquals(testedValue, expectedValue, "Wrong tested value. expected: " + expectedValue + " found: "+ testedValue);
+        assertEquals(testedValue, expectedValue, "Wrong tested value. expected: " + expectedValue + " found: " + testedValue);
         return this;
     }
-
-
 
 
 }

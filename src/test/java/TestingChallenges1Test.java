@@ -32,8 +32,9 @@ public class TestingChallenges1Test extends BaseTest {
           Navigator.openTestingChallenge1()
                   .enterNameAndSubmit(name)
                   .verifyChecksFound(number)
+                  .verifyUsernameInConfirmationWindow(name)
                   .verifyNameInConfirmationWindow(name)
-                  .verifyNameInConfirmationWindow(name);
+                  ;
       }
 
     }

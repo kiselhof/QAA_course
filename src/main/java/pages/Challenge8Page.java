@@ -8,7 +8,7 @@ import org.testng.Assert;
 
 import static framework.BrowserManager.getDriver;
 
-public class Challenge8Page extends BasePage{
+public class Challenge8Page extends BasePage {
 
     private ItemToSellChallenge8 _itemToSell;
 
@@ -54,21 +54,21 @@ public class Challenge8Page extends BasePage{
     }
 
 
-    public Challenge8Page verifyItemName(){
+    public Challenge8Page verifyItemName() {
         Assert.assertEquals(itemNamecheck.getText(), _itemToSell.get_whatYouSell(),
-                "Incorrect item name. Excpected: " + _itemToSell.get_whatYouSell()
-                + " ,found: " + itemNamecheck.getText());
+                "Incorrect item name. Expected: " + _itemToSell.get_whatYouSell()
+                        + " ,found: " + itemNamecheck.getText());
         return this;
     }
 
 
-    public Challenge8Page deleteLastItemFromPage(){
+    public Challenge8Page deleteLastItemFromPage() {
         deleteLastItem.click();
         return this;
     }
 
-    public Challenge8Page checkItemWasDeleted(){
-        Assert.assertNotEquals(_itemToSell.get_whatYouSell(),itemNamecheck.getText(), "Item is still there!");
+    public Challenge8Page verifyItemWasDeleted() {
+        Assert.assertNotEquals(_itemToSell.get_whatYouSell(), itemNamecheck.getText(), "Item is still there!");
         return this;
     }
 
@@ -80,7 +80,6 @@ public class Challenge8Page extends BasePage{
         alert.accept();
         return this;
     }
-
 
 
 }

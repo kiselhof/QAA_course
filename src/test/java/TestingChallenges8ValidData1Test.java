@@ -27,7 +27,7 @@ public class TestingChallenges8ValidData1Test extends BaseTest{
                 .InputDataAndSend()
                 .verifyItemName()
                 .deleteLastItemFromPage()
-                .checkItemWasDeleted();
+                .verifyItemWasDeleted();
     }
 
 

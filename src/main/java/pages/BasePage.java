@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,20 +17,16 @@ public class BasePage {
 
 
 
-    public BasePage waitForElement(){
+    public BasePage waitForElement(String xpath){
 
-        try {
+     /*   try {
             Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-/*
-            new WebDriverWait(getDriver(), 2)
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@name='formSubmit']")));
-                    //.until(ExpectedConditions.textToBe(By.xpath("//span[@class='values-tested']"), Integer.toString(index_of_list)));
 */
-
+            new WebDriverWait(getDriver(), 2)
+                .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
 
         return PageFactory.initElements(getDriver(), Challenge1Page.class);
     }

@@ -28,10 +28,9 @@ public class CNPNumber {
     }
 
     /**
-     *
      * Randomly generate date in range (1900;2019).
-     * @return randomly generated LocalDate object.
      *
+     * @return randomly generated LocalDate object.
      */
     private LocalDate generateRandomDate() {
         Random random = new Random();
@@ -43,12 +42,11 @@ public class CNPNumber {
     }
 
     /**
-     *
      * Randomly generate 1 digit.
+     *
      * @param min inclusive
      * @param max inclusive
      * @return 1 randomly generated digit
-     *
      */
     private String generateNumberInRange(int min, int max) {
         int randomInt = ThreadLocalRandom.current().nextInt(min, max + 1);
@@ -56,11 +54,10 @@ public class CNPNumber {
     }
 
     /**
-     *
      * Randomly generate first digit that shows gender and century person was born at.
+     *
      * @param myDate for specification of first digit
      * @return first digit
-     *
      */
     private String generateFirstDigit(LocalDate myDate) {
         String firstDigit;
@@ -74,12 +71,12 @@ public class CNPNumber {
 
         return firstDigit;
     }
+
     /**
-     *
      * Separate year of randomly generated date in String format "YY".
+     *
      * @param myDate for separation
      * @return year of randomly generated date
-     *
      */
     private String generateYearDigit(LocalDate myDate) {
         String yearDigit = String.valueOf(myDate.getYear() % 100);
@@ -93,11 +90,10 @@ public class CNPNumber {
     }
 
     /**
-     *
      * Separate month of randomly generated date in String format "MM".
+     *
      * @param myDate for separation
      * @return month of randomly generated date
-     *
      */
     private String generateMonthDigit(LocalDate myDate) {
         int month = myDate.getMonthValue();
@@ -109,11 +105,10 @@ public class CNPNumber {
     }
 
     /**
-    *
-    * Separate day of randomly generated date in String format "DD".
-    * @param myDate for separation
-    * @return day of randomly generated date
-    *
+     * Separate day of randomly generated date in String format "DD".
+     *
+     * @param myDate for separation
+     * @return day of randomly generated date
      */
     private String generateDayDigit(LocalDate myDate) {
         int day = myDate.getDayOfMonth();
@@ -126,10 +121,9 @@ public class CNPNumber {
     }
 
     /**
-     *
      * Randomly generate 2 digits of CNP number
-     * @return randomly generated 2 digits of CNP number
      *
+     * @return randomly generated 2 digits of CNP number
      */
     private String generateCodeDigits() {
         String codeDigits = generateNumberInRange(0, 52);
@@ -141,10 +135,9 @@ public class CNPNumber {
     }
 
     /**
-    *
-    * Randomly generate 3 last digits of CNP number
-    * @return randomly generated 3 last digits of CNP number
-    *
+     * Randomly generate 3 last digits of CNP number
+     *
+     * @return randomly generated 3 last digits of CNP number
      */
     private String generateOrderDigits() {
         String orderDigits = generateNumberInRange(0, 9) + generateNumberInRange(0, 9) + generateNumberInRange(0, 9);
@@ -152,9 +145,10 @@ public class CNPNumber {
     }
 
     /**
-    * Generate twelve digits of CNP number.
-    * @param date for generating parts of CNP number
-    * @return twelve digits of CNP number in String form
+     * Generate twelve digits of CNP number.
+     *
+     * @param date for generating parts of CNP number
+     * @return twelve digits of CNP number in String form
      */
     private String generate12Digits(LocalDate date) {
         String twelveDigits =
@@ -169,25 +163,26 @@ public class CNPNumber {
 
 
     /**
-    *
-    * Generate control sum of CNP number
-    * @param twelveDigits before
-    * @return the control sum
-    *
+     * Generate control sum of CNP number.
+     * Take the first 12 numbers of the CNP and multiply
+     * each number with the corresponding position
+     * number from this string: 279146358279.
+     * You divide that result by 11
+     * if it is 10 then the last digit is 1
+     * otherwise it equals the rest obtained
+     *
+     * @param twelveDigits before
+     * @return the control sum
      */
     private String generateLastDigit(String twelveDigits) {
         int result = 0;
         for (int index = 0; index < stringForMultiplying.length(); index++) {
             result += getNumericValue(stringForMultiplying.charAt(index)) * getNumericValue(twelveDigits.charAt(index));
         }
-        /*делишь на 11
-    если вышло 10 - бери "1"
-    если 1-9 -- то это и берёшь*/
         int checkDigit = result % 11;
         if (checkDigit == 10) {
             return "1";
-        }
-        else {
+        } else {
             return String.valueOf(checkDigit);
         }
     }

@@ -19,13 +19,14 @@ public class Challenge1Page extends BasePage {
     private WebElement nameFromConfirmation;
     @FindBy(className="values-tested")
     private WebElement valuesTested;
+    private static final String submitButtonxpath = "//input[@name='formSubmit']";
 
 
 
     public Challenge1Page enterNameAndSubmit(String name){
         firstNameField.click();
            firstNameField.sendKeys(name);
-           waitForElement();
+           waitForElement(submitButtonxpath);
            submitButton.click();
            return this;
        }
